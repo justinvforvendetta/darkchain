@@ -1,4 +1,4 @@
-bkchain.org JSON API
+darkchain.org JSON API
 
 Blocks:
 - $currency/api/v1/block/hash/$block_hash

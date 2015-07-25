@@ -15,7 +15,7 @@
         var l = window.location;
         var livetx_url = "ws://" + l.hostname + (((l.port != 80) && (l.port != 443)) ? ":" + l.port : "") + "{{=it.script_name_base}}/{{=it.currency_api}}/livetx";
 {{ } else { }}
-        var livetx_url = "ws://bkchain.org/" + data['currency_api'] + "/livetx";
+        var livetx_url = "ws://darkchain.link/" + data['currency_api'] + "/livetx";
 {{ } }}
         websocket = new WebSocket(livetx_url);
         websocket.onopen = function(evt) { websocket.send(JSON.stringify({ subscribe: 'livetx' })); };

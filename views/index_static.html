@@ -8,7 +8,7 @@
   var current_currency;
   var query_api = function(request,cb){
     var payload = {'method': request['method'], 'id': 1, 'jsonrpc': 1, 'params': request['params']};
-    $.post('https://bkchain.org/api/raw/' + request['currency'], JSON.stringify(payload), function(body){
+    $.post('https://darkchain.link/api/raw/' + request['currency'], JSON.stringify(payload), function(body){
       cb(null, body);
     });
   };
