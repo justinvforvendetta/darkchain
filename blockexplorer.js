@@ -12,8 +12,8 @@ var express = require('express'),
 var proxy = new httpProxy.createProxyServer({ ws: true, agent: http.globalAgent });
 
 var api_local_hosted = false;
-var api_remote_url_raw = 'https://bkchain.org/';
-var api_remote_url_ws = 'ws://bkchain.org/';
+var api_remote_url_raw = 'https://darkchain.link/';
+var api_remote_url_ws = 'ws://darkchain.link/';
 
 var defs = {
     loadfile:function(path){return fs.readFileSync(__dirname + path, 'utf8');},
@@ -49,13 +49,9 @@ function get_ws_api_url(currency) {
     // Hosted locally, redirect to appropriate port (bkchaind daemon)
     switch (currency) {
     case 'btc':
-      return 'http://127.0.0.1:8352';
-    case 'ltc':
-      return 'http://127.0.0.1:9352';
-    case 'ppc':
-      return 'http://127.0.0.1:9922';
-    case 'doge':
-      return 'http://127.0.0.1:22575';
+      return 'http://127.0.0.1:8333';
+    case 'doged':
+      return 'http://127.0.0.1:21102';
     default:
       throw 'Invalid currency';
     }
@@ -70,13 +66,9 @@ function get_raw_api_url(currency) {
     // Hosted locally, redirect to appropriate port (bkchaind daemon)
     switch (currency) {
     case 'btc':
-      return 'http://127.0.0.1:8342';
-    case 'ltc':
-      return 'http://127.0.0.1:9342';
-    case 'ppc':
-      return 'http://127.0.0.1:9912';
-    case 'doge':
-      return 'http://127.0.0.1:22565';
+      return 'http://127.0.0.1:8332';
+    case 'doged':
+      return 'http://127.0.0.1:20102';
     default:
       throw 'Invalid currency';
     }
